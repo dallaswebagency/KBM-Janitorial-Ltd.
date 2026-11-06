@@ -8,18 +8,18 @@
 <link rel="icon" href="images/kbm-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#121212;
-  --ink-2:#2a2a28;
+  --ink-2:#1f1f1d;
   --ivory:#f3efe6;
   --paper:#fbf9f4;
   --stone:#e4ded1;
-  --muted:#6b675f;
+  --muted:#4f4b44;
   --brass:#a47a35;
   --rule:rgba(18,18,18,.14);
-  --serif:"Bodoni Moda",Georgia,serif;
+  --serif:"Young Serif",Georgia,serif;
   --sans:"Instrument Sans",system-ui,sans-serif;
   --wrap:1240px;
 }
@@ -29,10 +29,10 @@ body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--muted)}
 .eyebrow b{color:var(--brass);font-weight:600}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.015em}
-em{font-style:italic}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.02em}
+h1 em,h2 em,h3 em{font-style:normal}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font-weight:600;font-size:15px;border:1.5px solid var(--ink);transition:.25s}
 .btn-ink{background:var(--ink);color:var(--paper)}
 .btn-ink:hover{background:var(--brass);border-color:var(--brass)}
@@ -56,7 +56,7 @@ nav a{position:relative;padding:6px 0}
 nav a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--ink);transition:.25s}
 nav a:hover::after,nav a.on::after{width:100%}
 .hd-r{display:flex;align-items:center;gap:22px}
-.hd-phone{font-family:var(--serif);font-size:20px;font-weight:500}
+.hd-phone{font-family:var(--serif);font-size:19px;font-weight:400}
 .hd-r .btn{padding:13px 20px}
 .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
 .burger span{display:block;height:1.5px;background:var(--ink);margin:7px 6px}
@@ -64,29 +64,29 @@ nav a:hover::after,nav a.on::after{width:100%}
 /* hero */
 .hero{background:var(--ivory);position:relative;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding-top:80px;padding-bottom:90px}
-.hero h1{font-size:clamp(52px,7.4vw,108px);margin:26px 0 28px}
+.hero h1{font-size:clamp(48px,6.6vw,96px);margin:26px 0 28px}
 .hero h1 em{color:var(--brass);font-weight:400}
 .hero p.lead{font-size:19px;max-width:520px;color:var(--ink-2)}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
 .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;margin-top:60px;border-top:1px solid var(--rule)}
 .facts div{padding:20px 40px 0 0;margin-right:40px;border-right:1px solid var(--rule)}
 .facts div:last-child{border-right:0}
-.facts strong{display:block;font-family:var(--serif);font-size:38px;font-weight:500;line-height:1}
+.facts strong{display:block;font-family:var(--serif);font-size:38px;font-weight:400;line-height:1}
 .facts small{font-size:13px;color:var(--muted)}
 .oval-wrap{position:relative;justify-self:center;width:min(440px,100%);aspect-ratio:3/4}
 .oval-wrap .ring{position:absolute;inset:-18px -26px;border:1.5px solid var(--ink);border-radius:50%;transform:rotate(-7deg)}
 .oval-wrap .img{position:absolute;inset:0;border-radius:50%;overflow:hidden}
-.oval-wrap .img img{width:100%;height:100%;object-fit:cover}
+.oval-wrap .img img{width:100%;height:100%;object-fit:cover;object-position:68% center}
 .tag{position:absolute;left:-40px;bottom:12%;background:var(--paper);border:1px solid var(--ink);padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:6px 6px 0 var(--ink)}
 .tag img{width:58px}
 .tag b{display:block;font-size:14px}
 .tag span{font-size:12px;color:var(--muted)}
-.est{position:absolute;right:28px;top:30px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted);writing-mode:vertical-rl}
+.est{position:absolute;right:28px;top:30px;font-family:var(--serif);font-size:15px;color:var(--muted);writing-mode:vertical-rl}
 
 /* credentials register */
 .register{border-bottom:1px solid var(--rule);background:var(--paper)}
 .register .wrap{display:grid;grid-template-columns:220px repeat(4,1fr);align-items:stretch}
-.register .lbl{display:flex;align-items:center;padding:28px 0;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.25}
+.register .lbl{display:flex;align-items:center;padding:28px 0;font-family:var(--serif);font-size:20px;line-height:1.25}
 .register .cell{border-left:1px solid var(--rule);display:flex;align-items:center;justify-content:center;padding:26px 30px}
 .register .cell img{max-height:66px;width:auto;filter:grayscale(1) contrast(1.05);opacity:.85;transition:.3s}
 .register .cell:hover img{filter:none;opacity:1}
@@ -99,7 +99,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .idx{list-style:none;border-top:1.5px solid var(--ink);position:relative}
 .idx li{border-bottom:1px solid var(--rule)}
 .idx a{display:grid;grid-template-columns:90px 1.1fr 1fr 60px;align-items:center;gap:20px;padding:30px 0;transition:.3s}
-.idx .n{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:18px}
+.idx .n{font-family:var(--serif);color:var(--muted);font-size:18px}
 .idx h3{font-size:clamp(28px,3vw,42px)}
 .idx p{color:var(--muted);font-size:15.5px}
 .idx .arr{width:46px;height:46px;border:1px solid var(--rule);border-radius:50%;display:grid;place-items:center;justify-self:end;transition:.3s}
@@ -114,16 +114,16 @@ nav a:hover::after,nav a.on::after{width:100%}
 /* clients */
 .clients{background:var(--ink);color:var(--paper);padding:120px 0}
 .clients .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
-.clients .eyebrow{color:#9d978a}
+.clients .eyebrow{color:#c4beb1}
 .clients h2{font-size:clamp(40px,4.6vw,64px);margin:22px 0 26px}
 .clients h2 em{color:#d2ad6a}
-.clients .side p{color:#bdb7aa;max-width:420px}
+.clients .side p{color:#d6d1c6;max-width:420px}
 .clients .side .pic{margin-top:44px;aspect-ratio:16/11;overflow:hidden;position:relative}
 .clients .side .pic img{width:100%;height:100%;object-fit:cover}
 .clients .side .pic figcaption{position:absolute;left:0;bottom:0;background:var(--paper);color:var(--ink);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:10px 16px}
 .clist{list-style:none;columns:2;column-gap:50px;counter-reset:c;align-self:center}
 .clist li{break-inside:avoid;counter-increment:c;display:flex;gap:16px;align-items:baseline;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.13);font-size:17px}
-.clist li::before{content:counter(c,decimal-leading-zero);font-family:var(--serif);font-style:italic;color:#8a8478;font-size:14px;min-width:24px}
+.clist li::before{content:counter(c,decimal-leading-zero);font-family:var(--serif);color:#b3ad9f;font-size:14px;min-width:24px}
 .clients .side .btn{margin-top:36px;border-color:var(--paper);color:var(--paper)}
 .clients .side .btn:hover{background:var(--paper);color:var(--ink)}
 
@@ -134,7 +134,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .standard .ph .main{aspect-ratio:4/5;overflow:hidden}
 .standard .ph .main img{width:100%;height:100%;object-fit:cover;object-position:30% center}
 .standard .ph .stamp{position:absolute;right:-30px;top:40px;width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;text-align:center;font-family:var(--serif);line-height:1.1}
-.standard .ph .stamp b{font-size:44px;font-weight:500;display:block}
+.standard .ph .stamp b{font-size:40px;font-weight:400;display:block}
 .standard .ph .stamp span{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
 .standard h2{font-size:clamp(38px,4.4vw,60px);margin:22px 0 40px}
 .words{list-style:none;border-top:1.5px solid var(--ink)}
@@ -160,7 +160,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .steps div.done{color:var(--ink)}
 .pane{display:none;padding:34px}
 .pane.on{display:block}
-.pane h4{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:6px}
+.pane h4{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:6px}
 .pane .hint{color:var(--muted);font-size:14.5px;margin-bottom:24px}
 .opts{display:flex;flex-wrap:wrap;gap:10px}
 .opts label{cursor:pointer}
@@ -181,7 +181,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .nav-row .back:hover{color:var(--ink)}
 .nav-row button.btn{cursor:pointer;font-family:var(--sans)}
 .done-msg{display:none;padding:60px 34px;text-align:center}
-.done-msg h4{font-family:var(--serif);font-size:34px;font-weight:500;margin-bottom:10px}
+.done-msg h4{font-family:var(--serif);font-size:34px;font-weight:400;margin-bottom:10px}
 .done-msg p{color:var(--muted)}
 .info{border-top:1.5px solid var(--ink);padding-top:30px}
 .info h3{font-size:30px;margin-bottom:22px}
@@ -221,7 +221,7 @@ nav a:hover::after,nav a.on::after{width:100%}
 .band .ctas{display:flex;gap:14px;flex-wrap:wrap}
 
 /* footer */
-footer{background:var(--ink);color:#bdb7aa;padding:80px 0 0;font-size:15px}
+footer{background:var(--ink);color:#d0cabe;padding:80px 0 0;font-size:15px}
 .ft{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1fr;gap:50px;padding-bottom:60px}
 .ft .logo-w{height:70px;width:auto;filter:invert(1)}
 .ft p{margin-top:22px;max-width:300px}
@@ -348,7 +348,7 @@ footer{background:var(--ink);color:#bdb7aa;padding:80px 0 0;font-size:15px}
     </div>
     <div class="oval-wrap rv">
       <div class="ring"></div>
-      <div class="img"><img src="images/hero-oval.jpg" alt="Clean, polished commercial lobby in Calgary"></div>
+      <div class="img"><img src="images/hero-oval.jpg" alt="KBM janitor mopping a polished commercial lobby floor in Calgary"></div>
       <div class="tag">
         <img src="images/badge-bbb.png" alt="BBB Accredited Business">
         <div><b>A+ Rated</b><span>Bonded &amp; insured</span></div>
