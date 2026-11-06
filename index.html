@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KBM Janitorial Ltd. | Commercial &amp; Residential Cleaning in Calgary Since 1999</title>
+<meta name="description" content="KBM Janitorial Ltd. provides commercial and residential cleaning in Calgary since 1999. BBB A+ rated, bonded, insured and WHMIS trained. Request a free estimate.">
+<link rel="icon" href="images/kbm-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#121212;
+  --ink-2:#2a2a28;
+  --ivory:#f3efe6;
+  --paper:#fbf9f4;
+  --stone:#e4ded1;
+  --muted:#6b675f;
+  --brass:#a47a35;
+  --rule:rgba(18,18,18,.14);
+  --serif:"Bodoni Moda",Georgia,serif;
+  --sans:"Instrument Sans",system-ui,sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.eyebrow b{color:var(--brass);font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.015em}
+em{font-style:italic}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font-weight:600;font-size:15px;border:1.5px solid var(--ink);transition:.25s}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--brass);border-color:var(--brass)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:16px;height:16px}
+
+/* utility bar */
+.util{background:var(--ink);color:#cfcabe;font-size:13px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:20px}
+.util span{display:inline-flex;align-items:center;gap:8px}
+.util .dot{width:6px;height:6px;border-radius:50%;background:var(--brass)}
+.util a:hover{color:#fff}
+.util .r{display:flex;gap:26px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,249,244,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:86px}
+.logo img{height:58px;width:auto}
+nav ul{display:flex;gap:38px;list-style:none;font-weight:500;font-size:15px}
+nav a{position:relative;padding:6px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--ink);transition:.25s}
+nav a:hover::after,nav a.on::after{width:100%}
+.hd-r{display:flex;align-items:center;gap:22px}
+.hd-phone{font-family:var(--serif);font-size:20px;font-weight:500}
+.hd-r .btn{padding:13px 20px}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;height:1.5px;background:var(--ink);margin:7px 6px}
+
+/* hero */
+.hero{background:var(--ivory);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding-top:80px;padding-bottom:90px}
+.hero h1{font-size:clamp(52px,7.4vw,108px);margin:26px 0 28px}
+.hero h1 em{color:var(--brass);font-weight:400}
+.hero p.lead{font-size:19px;max-width:520px;color:var(--ink-2)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;margin-top:60px;border-top:1px solid var(--rule)}
+.facts div{padding:20px 40px 0 0;margin-right:40px;border-right:1px solid var(--rule)}
+.facts div:last-child{border-right:0}
+.facts strong{display:block;font-family:var(--serif);font-size:38px;font-weight:500;line-height:1}
+.facts small{font-size:13px;color:var(--muted)}
+.oval-wrap{position:relative;justify-self:center;width:min(440px,100%);aspect-ratio:3/4}
+.oval-wrap .ring{position:absolute;inset:-18px -26px;border:1.5px solid var(--ink);border-radius:50%;transform:rotate(-7deg)}
+.oval-wrap .img{position:absolute;inset:0;border-radius:50%;overflow:hidden}
+.oval-wrap .img img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:-40px;bottom:12%;background:var(--paper);border:1px solid var(--ink);padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:6px 6px 0 var(--ink)}
+.tag img{width:58px}
+.tag b{display:block;font-size:14px}
+.tag span{font-size:12px;color:var(--muted)}
+.est{position:absolute;right:28px;top:30px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted);writing-mode:vertical-rl}
+
+/* credentials register */
+.register{border-bottom:1px solid var(--rule);background:var(--paper)}
+.register .wrap{display:grid;grid-template-columns:220px repeat(4,1fr);align-items:stretch}
+.register .lbl{display:flex;align-items:center;padding:28px 0;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.25}
+.register .cell{border-left:1px solid var(--rule);display:flex;align-items:center;justify-content:center;padding:26px 30px}
+.register .cell img{max-height:66px;width:auto;filter:grayscale(1) contrast(1.05);opacity:.85;transition:.3s}
+.register .cell:hover img{filter:none;opacity:1}
+
+/* services index */
+.services{padding:120px 0 110px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
+.sec-head h2{font-size:clamp(40px,5vw,68px)}
+.sec-head p{color:var(--ink-2);max-width:460px;justify-self:end}
+.idx{list-style:none;border-top:1.5px solid var(--ink);position:relative}
+.idx li{border-bottom:1px solid var(--rule)}
+.idx a{display:grid;grid-template-columns:90px 1.1fr 1fr 60px;align-items:center;gap:20px;padding:30px 0;transition:.3s}
+.idx .n{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:18px}
+.idx h3{font-size:clamp(28px,3vw,42px)}
+.idx p{color:var(--muted);font-size:15.5px}
+.idx .arr{width:46px;height:46px;border:1px solid var(--rule);border-radius:50%;display:grid;place-items:center;justify-self:end;transition:.3s}
+.idx .arr svg{width:16px}
+.idx a:hover{padding-left:14px}
+.idx a:hover .arr{background:var(--ink);color:var(--paper);border-color:var(--ink);transform:rotate(-45deg)}
+.idx .thumb{display:none}
+.float-img{position:fixed;width:300px;aspect-ratio:4/3;pointer-events:none;z-index:40;opacity:0;transform:translate(-50%,-50%) scale(.9);transition:opacity .25s,transform .25s;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.float-img.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.float-img img{width:100%;height:100%;object-fit:cover}
+
+/* clients */
+.clients{background:var(--ink);color:var(--paper);padding:120px 0}
+.clients .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
+.clients .eyebrow{color:#9d978a}
+.clients h2{font-size:clamp(40px,4.6vw,64px);margin:22px 0 26px}
+.clients h2 em{color:#d2ad6a}
+.clients .side p{color:#bdb7aa;max-width:420px}
+.clients .side .pic{margin-top:44px;aspect-ratio:16/11;overflow:hidden;position:relative}
+.clients .side .pic img{width:100%;height:100%;object-fit:cover}
+.clients .side .pic figcaption{position:absolute;left:0;bottom:0;background:var(--paper);color:var(--ink);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:10px 16px}
+.clist{list-style:none;columns:2;column-gap:50px;counter-reset:c;align-self:center}
+.clist li{break-inside:avoid;counter-increment:c;display:flex;gap:16px;align-items:baseline;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.13);font-size:17px}
+.clist li::before{content:counter(c,decimal-leading-zero);font-family:var(--serif);font-style:italic;color:#8a8478;font-size:14px;min-width:24px}
+.clients .side .btn{margin-top:36px;border-color:var(--paper);color:var(--paper)}
+.clients .side .btn:hover{background:var(--paper);color:var(--ink)}
+
+/* standard */
+.standard{padding:120px 0;background:var(--ivory)}
+.standard .wrap{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.standard .ph{position:relative}
+.standard .ph .main{aspect-ratio:4/5;overflow:hidden}
+.standard .ph .main img{width:100%;height:100%;object-fit:cover;object-position:30% center}
+.standard .ph .stamp{position:absolute;right:-30px;top:40px;width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;text-align:center;font-family:var(--serif);line-height:1.1}
+.standard .ph .stamp b{font-size:44px;font-weight:500;display:block}
+.standard .ph .stamp span{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.standard h2{font-size:clamp(38px,4.4vw,60px);margin:22px 0 40px}
+.words{list-style:none;border-top:1.5px solid var(--ink)}
+.words li{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--rule)}
+.words li span{font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1.1}
+.words li svg{width:22px;height:22px;color:var(--brass)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chips span{border:1px solid var(--ink);padding:9px 16px;font-size:13.5px;font-weight:600;letter-spacing:.04em}
+.chips span.fill{background:var(--ink);color:var(--paper)}
+.standard .note{margin-top:22px;color:var(--muted);font-size:15.5px}
+
+/* estimate */
+.estimate{padding:120px 0;background:var(--paper)}
+.estimate .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:60px;align-items:start}
+.estimate h2{font-size:clamp(40px,5vw,66px);margin:20px 0 14px}
+.estimate .intro{color:var(--ink-2);margin-bottom:40px;max-width:520px}
+.form{border:1.5px solid var(--ink);background:#fff}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1.5px solid var(--ink)}
+.steps div{padding:16px 20px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-right:1px solid var(--rule);display:flex;gap:10px;align-items:center}
+.steps div:last-child{border-right:0}
+.steps div i{font-style:normal;font-family:var(--serif);font-size:20px;letter-spacing:0}
+.steps div.on{background:var(--ink);color:var(--paper)}
+.steps div.done{color:var(--ink)}
+.pane{display:none;padding:34px}
+.pane.on{display:block}
+.pane h4{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:6px}
+.pane .hint{color:var(--muted);font-size:14.5px;margin-bottom:24px}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:inline-block;border:1px solid var(--rule);padding:11px 16px;font-size:14.5px;transition:.2s}
+.opts label:hover span{border-color:var(--ink)}
+.opts input:checked+span{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sub{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted);margin:28px 0 12px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fields .full{grid-column:1/-1}
+.fields label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.fields input,.fields textarea{width:100%;border:0;border-bottom:1.5px solid var(--rule);padding:10px 0;font:inherit;background:transparent;outline:none;transition:.2s}
+.fields input:focus,.fields textarea:focus{border-color:var(--ink)}
+.fields textarea{resize:vertical;min-height:80px}
+.fields input[type=file]{border:1px dashed var(--rule);padding:12px;font-size:14px}
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:30px;gap:12px}
+.nav-row .back{background:none;border:0;font:inherit;font-weight:600;cursor:pointer;color:var(--muted)}
+.nav-row .back:hover{color:var(--ink)}
+.nav-row button.btn{cursor:pointer;font-family:var(--sans)}
+.done-msg{display:none;padding:60px 34px;text-align:center}
+.done-msg h4{font-family:var(--serif);font-size:34px;font-weight:500;margin-bottom:10px}
+.done-msg p{color:var(--muted)}
+.info{border-top:1.5px solid var(--ink);padding-top:30px}
+.info h3{font-size:30px;margin-bottom:22px}
+.info .row{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:15.5px}
+.info .row b{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-top:3px}
+.info .row a:hover{color:var(--brass)}
+.hours{width:100%;border-collapse:collapse;font-size:15px}
+.hours td{padding:3px 0}
+.hours td:last-child{text-align:right}
+.hours .off{color:var(--muted)}
+.map{margin-top:26px;aspect-ratio:4/3;border:1px solid var(--rule);filter:grayscale(1)}
+.map iframe{width:100%;height:100%;border:0}
+.visit{margin-top:18px;font-size:14.5px;color:var(--muted)}
+.visit em{font-family:var(--serif);color:var(--ink);font-size:17px}
+
+/* faq */
+.faq{padding:110px 0;background:var(--ivory)}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.faq h2{font-size:clamp(40px,4.6vw,62px);margin-top:20px}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq details:first-child{border-top:1.5px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 0;font-family:var(--serif);font-size:clamp(22px,2.2vw,28px)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:32px;height:32px;flex:none;border:1px solid var(--ink);border-radius:50%;position:relative;transition:.3s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:.3s}
+.faq details[open] summary i{background:var(--ink)}
+.faq details[open] summary i::before,.faq details[open] summary i::after{background:var(--paper)}
+.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.faq details p{padding:0 60px 28px 0;color:var(--ink-2)}
+
+/* closing band */
+.band{background:var(--paper);padding:90px 0;border-top:1px solid var(--rule)}
+.band .wrap{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.band h2{font-size:clamp(36px,4.6vw,64px);max-width:760px}
+.band h2 em{color:var(--brass)}
+.band .ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+/* footer */
+footer{background:var(--ink);color:#bdb7aa;padding:80px 0 0;font-size:15px}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1fr;gap:50px;padding-bottom:60px}
+.ft .logo-w{height:70px;width:auto;filter:invert(1)}
+.ft p{margin-top:22px;max-width:300px}
+.ft h5{color:var(--paper);font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px;font-weight:600}
+.ft ul{list-style:none;display:grid;gap:10px}
+.ft a:hover{color:var(--paper)}
+.social{display:flex;gap:10px;margin-top:4px}
+.social a{width:42px;height:42px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;transition:.25s}
+.social a:hover{background:var(--paper);color:var(--ink)}
+.social svg{width:17px;height:17px}
+.fb{border-top:1px solid rgba(255,255,255,.12);padding:24px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13.5px}
+.fb a{color:var(--paper);text-decoration:underline;text-underline-offset:3px}
+
+/* mobile call bar */
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  nav,.hd-phone{display:none}
+  .burger{display:block}
+  nav.open{display:block;position:absolute;top:86px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--rule)}
+  nav.open ul{flex-direction:column;gap:0;padding:10px 28px 20px}
+  nav.open li{border-bottom:1px solid var(--rule)}
+  nav.open a{display:block;padding:14px 0}
+  .register .wrap{grid-template-columns:repeat(4,1fr)}
+  .register .lbl{grid-column:1/-1;padding-bottom:0}
+  .register .cell:nth-child(2){border-left:0}
+}
+@media (max-width:900px){
+  .util .l{display:none}
+  .util .wrap{justify-content:center}
+  .hero .wrap,.clients .wrap,.standard .wrap,.estimate .wrap,.faq .wrap,.sec-head{grid-template-columns:1fr}
+  .hero .wrap{padding-top:50px;gap:70px}
+  .est{display:none}
+  .tag{left:-10px}
+  .sec-head p{justify-self:start}
+  .idx a{grid-template-columns:60px 1fr 46px}
+  .idx p{grid-column:2/3;grid-row:2}
+  .idx .thumb{display:block;grid-column:1/-1;grid-row:3;aspect-ratio:16/9;overflow:hidden;margin-top:10px}
+  .idx .thumb img{width:100%;height:100%;object-fit:cover}
+  .float-img{display:none}
+  .clients .wrap{gap:50px}
+  .standard .ph .stamp{right:10px;top:-30px;width:120px;height:120px}
+  .standard .ph .stamp b{font-size:34px}
+  .ft{grid-template-columns:1fr 1fr}
+  .hd-r .btn{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;border-top:1.5px solid var(--ink)}
+  .mbar a{padding:15px;text-align:center;font-weight:600;font-size:15px;background:var(--paper)}
+  .mbar a:last-child{background:var(--ink);color:var(--paper)}
+  body{padding-bottom:54px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .util .r span{display:none}
+  .oval-wrap{width:82%}
+  .oval-wrap .ring{inset:-12px -14px}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .facts div{padding-right:10px;margin-right:12px}
+  .facts strong{font-size:28px}
+  .register .wrap{grid-template-columns:1fr 1fr}
+  .register .cell{border-top:1px solid var(--rule)}
+  .register .cell:nth-child(4){border-left:0}
+  .clist{columns:1}
+  .steps div{padding:12px;font-size:11px}
+  .steps div em{display:none}
+  .pane{padding:24px 20px}
+  .fields{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr}
+  .services,.clients,.standard,.estimate{padding:80px 0}
+  .faq details p{padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <span class="l"><i class="dot"></i>Mon to Fri, 9:00 AM to 5:00 PM &nbsp;·&nbsp; 1108 Falconridge Drive NE, Calgary</span>
+    <div class="r">
+      <a href="mailto:kbmcalgary@hotmail.com">kbmcalgary@hotmail.com</a>
+      <span>BBB Accredited · A+ Rating</span>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="logo"><img src="images/kbm-logo.png" alt="KBM Janitorial Ltd."></a>
+    <nav id="nav">
+      <ul>
+        <li><a href="#" class="on">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hd-r">
+      <a href="tel:4036165386" class="hd-phone">403-616-5386</a>
+      <a href="#estimate" class="btn btn-ink">Book a Cleaning Today</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="est">Established 1999</div>
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow"><b>KBM Janitorial Ltd.</b> &nbsp;/&nbsp; Professional Cleaning Services in Calgary</div>
+      <h1>Clean spaces, <em>happy</em> faces.</h1>
+      <p class="lead">Commercial and residential cleaning for Calgary businesses and homes since 1999. Our crews are supervised, bonded, insured and WHMIS trained.</p>
+      <div class="ctas">
+        <a href="#estimate" class="btn btn-ink">Get a free estimate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:4036165386" class="btn btn-line">Call 403-616-5386</a>
+      </div>
+      <div class="facts">
+        <div><strong>1999</strong><small>Cleaning Calgary since</small></div>
+        <div><strong>A+</strong><small>BBB accredited</small></div>
+        <div><strong>COR</strong><small>Safety trained crews</small></div>
+      </div>
+    </div>
+    <div class="oval-wrap rv">
+      <div class="ring"></div>
+      <div class="img"><img src="images/hero-oval.jpg" alt="Clean, polished commercial lobby in Calgary"></div>
+      <div class="tag">
+        <img src="images/badge-bbb.png" alt="BBB Accredited Business">
+        <div><b>A+ Rated</b><span>Bonded &amp; insured</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="register">
+  <div class="wrap">
+    <div class="lbl">Accredited, insured<br>&amp; proudly local</div>
+    <div class="cell"><img src="images/badge-bbb.png" alt="BBB Accredited Business A+ Rating"></div>
+    <div class="cell"><img src="images/badge-calgary.png" alt="The City of Calgary"></div>
+    <div class="cell"><img src="images/badge-wcb.png" alt="WCB Workers' Compensation Board Alberta"></div>
+    <div class="cell"><img src="images/badge-smi.jpg" alt="SMI Sandbox Mutual Insurance"></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow"><b>01</b> &nbsp;/&nbsp; Services</div>
+        <h2 style="margin-top:20px">What we <em>clean</em>.</h2>
+      </div>
+      <p>From daily office upkeep to floor refinishing, one trained KBM crew handles it all, so you only have one call to make.</p>
+    </div>
+    <ul class="idx rv" id="idx">
+      <li><a href="#estimate" data-img="images/office-cleaning.jpg"><span class="n">01</span><h3>Office Cleaning</h3><p>Desks, washrooms, kitchens and common areas kept spotless.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="thumb"><img src="images/office-cleaning.jpg" alt="Office cleaning" loading="lazy"></div></a></li>
+      <li><a href="#estimate" data-img="images/svc-commercial-residential.jpg"><span class="n">02</span><h3>Commercial &amp; Residential</h3><p>Cleaning for businesses of every size, and for homes too.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="thumb"><img src="images/svc-commercial-residential.jpg" alt="Commercial and residential cleaning" loading="lazy"></div></a></li>
+      <li><a href="#estimate" data-img="images/svc-post-construction.jpg"><span class="n">03</span><h3>Post-Construction</h3><p>Dust, debris and residue cleared so your space is move-in ready.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="thumb"><img src="images/svc-post-construction.jpg" alt="Post-construction cleaning" loading="lazy"></div></a></li>
+      <li><a href="#estimate" data-img="images/svc-carpet.jpg"><span class="n">04</span><h3>Carpet Cleaning</h3><p>Deep cleaning that lifts dirt and refreshes high-traffic carpet.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="thumb"><img src="images/svc-carpet.jpg" alt="Carpet cleaning" loading="lazy"></div></a></li>
+      <li><a href="#estimate" data-img="images/svc-windows.jpg"><span class="n">05</span><h3>Window Washing</h3><p>Streak-free glass for storefronts, offices and entrances.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="thumb"><img src="images/svc-windows.jpg" alt="Window washing" loading="lazy"></div></a></li>
+      <li><a href="#estimate" data-img="images/svc-floor-care.jpg"><span class="n">06</span><h3>Floor Stripping, Sealing &amp; Refinishing</h3><p>Hard floors stripped, sealed and brought back to a lasting shine.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="thumb"><img src="images/svc-floor-care.jpg" alt="Floor stripping, sealing and refinishing" loading="lazy"></div></a></li>
+    </ul>
+  </div>
+  <div class="float-img" id="float"><img src="images/office-cleaning.jpg" alt=""></div>
+</section>
+
+<section class="clients">
+  <div class="wrap">
+    <div class="side rv">
+      <div class="eyebrow">02 &nbsp;/&nbsp; Who we clean for</div>
+      <h2>Offices, clinics, classrooms <em>&amp; more.</em></h2>
+      <p>Commercial janitorial for offices, industrial sites, medical facilities, schools, retail, restaurants and hotels across Calgary.</p>
+      <a href="#estimate" class="btn">Request a quote for your facility</a>
+      <figure class="pic"><img src="images/office-cleaning.jpg" alt="KBM cleaner wiping down an office workspace" loading="lazy"><figcaption>Commercial janitorial</figcaption></figure>
+    </div>
+    <ul class="clist rv">
+      <li>Office &amp; industrial buildings</li>
+      <li>Medical facilities</li>
+      <li>Schools</li>
+      <li>Colleges &amp; academies</li>
+      <li>Churches</li>
+      <li>Community centres</li>
+      <li>Retail stores</li>
+      <li>Shopping centres</li>
+      <li>Coffee shops</li>
+      <li>Restaurants &amp; bars</li>
+      <li>Car dealerships</li>
+      <li>Dance studios &amp; health clubs</li>
+      <li>Banks &amp; financial institutions</li>
+      <li>Hotels &amp; motels</li>
+    </ul>
+  </div>
+</section>
+
+<section class="standard" id="about">
+  <div class="wrap">
+    <div class="ph rv">
+      <div class="main"><img src="images/caution-floor.jpg" alt="Caution wet floor sign during cleaning" loading="lazy"></div>
+      <div class="stamp"><div><b>1999</b><span>Since</span></div></div>
+    </div>
+    <div class="rv">
+      <div class="eyebrow">03 &nbsp;/&nbsp; About KBM</div>
+      <h2>Every crew member is held to <em>one standard.</em></h2>
+      <ul class="words">
+        <li><span>Supervised</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></li>
+        <li><span>Bonded</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></li>
+        <li><span>Insured</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></li>
+        <li><span>Licensed</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></li>
+        <li><span>Uniformed</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></li>
+      </ul>
+      <div class="chips"><span class="fill">WHMIS trained</span><span>COR trained</span><span>Safety focused</span></div>
+      <p class="note">Proudly serving Albertans, with safety built into how we work on every site.</p>
+    </div>
+  </div>
+</section>
+
+<section class="estimate" id="estimate">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow"><b>04</b> &nbsp;/&nbsp; Free estimate</div>
+      <h2>Get your <em>estimate</em> in three steps.</h2>
+      <p class="intro">Tell us about your space and what you need. We'll get back to you with a quote.</p>
+      <form class="form" id="qform" onsubmit="return sendForm(event)">
+        <div class="steps" id="steps">
+          <div class="on"><i>1</i><em>Facility</em></div>
+          <div><i>2</i><em>Services</em></div>
+          <div><i>3</i><em>Details</em></div>
+        </div>
+        <div class="pane on" data-p="0">
+          <h4>What kind of space is it?</h4>
+          <p class="hint">Pick the option that fits best.</p>
+          <div class="opts">
+            <label><input type="radio" name="facility" value="Office / Industrial" checked><span>Office / Industrial</span></label>
+            <label><input type="radio" name="facility" value="Medical"><span>Medical facility</span></label>
+            <label><input type="radio" name="facility" value="School / College"><span>School / College</span></label>
+            <label><input type="radio" name="facility" value="Church / Community centre"><span>Church / Community centre</span></label>
+            <label><input type="radio" name="facility" value="Retail / Shopping centre"><span>Retail / Shopping centre</span></label>
+            <label><input type="radio" name="facility" value="Restaurant / Coffee shop / Bar"><span>Restaurant / Café / Bar</span></label>
+            <label><input type="radio" name="facility" value="Car dealership"><span>Car dealership</span></label>
+            <label><input type="radio" name="facility" value="Studio / Health club"><span>Studio / Health club</span></label>
+            <label><input type="radio" name="facility" value="Bank / Financial"><span>Bank / Financial</span></label>
+            <label><input type="radio" name="facility" value="Hotel / Motel"><span>Hotel / Motel</span></label>
+            <label><input type="radio" name="facility" value="Residential"><span>Residential</span></label>
+          </div>
+          <div class="nav-row"><span></span><button type="button" class="btn btn-ink" onclick="go(1)">Next: services →</button></div>
+        </div>
+        <div class="pane" data-p="1">
+          <h4>What do you need cleaned?</h4>
+          <p class="hint">Choose as many as you like.</p>
+          <div class="opts">
+            <label><input type="checkbox" name="svc" value="Office cleaning" checked><span>Office cleaning</span></label>
+            <label><input type="checkbox" name="svc" value="Commercial / Residential cleaning"><span>Commercial / Residential</span></label>
+            <label><input type="checkbox" name="svc" value="Post-construction cleaning"><span>Post-construction</span></label>
+            <label><input type="checkbox" name="svc" value="Carpet cleaning"><span>Carpet cleaning</span></label>
+            <label><input type="checkbox" name="svc" value="Window washing"><span>Window washing</span></label>
+            <label><input type="checkbox" name="svc" value="Floor stripping, sealing & refinishing"><span>Floor stripping &amp; refinishing</span></label>
+          </div>
+          <div class="sub">How often?</div>
+          <div class="opts">
+            <label><input type="radio" name="freq" value="One-time"><span>One-time</span></label>
+            <label><input type="radio" name="freq" value="Daily"><span>Daily</span></label>
+            <label><input type="radio" name="freq" value="Weekly" checked><span>Weekly</span></label>
+            <label><input type="radio" name="freq" value="Bi-weekly"><span>Bi-weekly</span></label>
+            <label><input type="radio" name="freq" value="Monthly"><span>Monthly</span></label>
+            <label><input type="radio" name="freq" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+          <div class="nav-row"><button type="button" class="back" onclick="go(0)">← Back</button><button type="button" class="btn btn-ink" onclick="go(2)">Next: your details →</button></div>
+        </div>
+        <div class="pane" data-p="2">
+          <h4>Where should we send your quote?</h4>
+          <p class="hint">We reply Monday to Friday, 9:00 AM to 5:00 PM.</p>
+          <div class="fields">
+            <div><label for="fn">Name</label><input id="fn" name="name" required></div>
+            <div><label for="fp">Phone</label><input id="fp" name="phone" type="tel"></div>
+            <div class="full"><label for="fe">Email</label><input id="fe" name="email" type="email" required></div>
+            <div class="full"><label for="fm">Message</label><textarea id="fm" name="message" placeholder="Size of the space, address, anything we should know"></textarea></div>
+            <div class="full"><label for="ff">Attachment (optional)</label><input id="ff" name="file" type="file"></div>
+          </div>
+          <div class="nav-row"><button type="button" class="back" onclick="go(1)">← Back</button><button type="submit" class="btn btn-ink">Send my request</button></div>
+        </div>
+        <div class="done-msg" id="done">
+          <h4>Thank you!</h4>
+          <p>Your request is ready to send. We'll be in touch with your estimate soon.</p>
+        </div>
+      </form>
+    </div>
+    <aside class="info rv" id="contact">
+      <h3>Contact KBM</h3>
+      <div class="row"><b>Call</b><a href="tel:4036165386" style="font-family:var(--serif);font-size:24px">403-616-5386</a></div>
+      <div class="row"><b>Email</b><a href="mailto:kbmcalgary@hotmail.com">kbmcalgary@hotmail.com</a></div>
+      <div class="row"><b>Office</b><span>1108 Falconridge Drive NE<br>Calgary, Alberta T3J 1A2</span></div>
+      <div class="row"><b>Hours</b>
+        <table class="hours">
+          <tr><td>Monday to Friday</td><td>9:00 AM to 5:00 PM</td></tr>
+          <tr class="off"><td>Saturday</td><td>Closed</td></tr>
+          <tr class="off"><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div class="map"><iframe title="KBM Janitorial location" loading="lazy" src="https://maps.google.com/maps?q=1108%20Falconridge%20Drive%20NE%2C%20Calgary%2C%20AB%20T3J%201A2&z=15&output=embed"></iframe></div>
+      <p class="visit"><em>Prefer to talk in person?</em> Stop by the office during business hours.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="rv">
+      <div class="eyebrow">05 &nbsp;/&nbsp; FAQ</div>
+      <h2>Questions, <em>answered.</em></h2>
+    </div>
+    <div class="rv">
+      <details open>
+        <summary>What areas do you service?<i></i></summary>
+        <p>We're based in northeast Calgary and serve businesses and homes across the city. Call 403-616-5386 to confirm service at your location.</p>
+      </details>
+      <details>
+        <summary>How often should I schedule janitorial services?<i></i></summary>
+        <p>It depends on your space, foot traffic and industry. Tell us about your facility in the estimate form and we'll recommend a schedule that fits.</p>
+      </details>
+      <details>
+        <summary>Do you offer green cleaning options?<i></i></summary>
+        <p>Ask us about green cleaning when you request your estimate and we'll go over the options for your space.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2 class="rv">Ready for a cleaner space? <em>Let's talk.</em></h2>
+    <div class="ctas rv">
+      <a href="#estimate" class="btn btn-ink">Book a Cleaning Today</a>
+      <a href="tel:4036165386" class="btn btn-line">403-616-5386</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <img src="images/kbm-logo.png" alt="KBM Janitorial Ltd." class="logo-w">
+        <p>Professional commercial and residential cleaning in Calgary since 1999. Clean spaces, happy faces.</p>
+      </div>
+      <div>
+        <h5>Quick links</h5>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:4036165386">403-616-5386</a></li>
+          <li><a href="mailto:kbmcalgary@hotmail.com">kbmcalgary@hotmail.com</a></li>
+          <li>1108 Falconridge Drive NE<br>Calgary, Alberta T3J 1A2</li>
+          <li>Mon to Fri, 9:00 AM to 5:00 PM</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Follow us</h5>
+        <div class="social">
+          <a href="https://www.facebook.com/kbmjanitorial" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
+          <a href="https://www.linkedin.com/company/kbm-janitorial" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V21h-4z"/></svg></a>
+          <a href="https://www.yelp.com/biz/kbm-janitorial" target="_blank" rel="noopener" aria-label="Yelp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.3 2.2c-.6-.3-4.4.8-5 1.2-.5.4-.6.9-.4 1.4l4.4 7.6c.6 1 1.8.7 1.8-.5V3.3c0-.5-.3-.9-.8-1.1zM11 15.3l-4.9 1.6c-.6.2-.8.9-.4 1.4.8 1.1 2.4 2.6 3.6 3 .6.2 1.1-.2 1.2-.8l.3-4.5c.1-.6-.3-.9-.8-.7zm1.8-1.5l2.6 4.2c.3.5 1 .6 1.4.1.9-1 1.9-2.9 2-4.2 0-.6-.5-1-1.1-.9l-4.3 1.1c-.6.1-.8.6-.6 1.1v-1.4zm.4-2.4l4.4-1.5c.6-.2.7-.9.3-1.4-.8-1.1-2.5-2.5-3.7-2.8-.6-.2-1.1.3-1.1.9l-.2 4.4c0 .4.4.6.8.4zM10 13.4l-4.6-1.8c-.6-.2-1.2.1-1.2.7-.1 1.2.3 3.3.9 4.3.3.5.9.6 1.3.3l3.7-2.7c.4-.3.4-.6-.1-.8z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="fb">
+      <span>© 2026 KBM Janitorial Ltd. All rights reserved.</span>
+      <span><a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Design by Cleaning Digital.</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:4036165386">Call now</a><a href="#estimate">Free estimate</a></div>
+
+<script>
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// service hover image
+const fl=document.getElementById('float'),fi=fl.querySelector('img');
+document.querySelectorAll('#idx a').forEach(a=>{
+  a.addEventListener('mouseenter',()=>{fi.src=a.dataset.img;fl.classList.add('show')});
+  a.addEventListener('mouseleave',()=>fl.classList.remove('show'));
+  a.addEventListener('mousemove',e=>{fl.style.left=(e.clientX+190)+'px';fl.style.top=e.clientY+'px'});
+});
+
+// estimate steps
+const panes=document.querySelectorAll('.pane'),st=document.querySelectorAll('#steps div');
+function go(i){
+  panes.forEach((p,k)=>p.classList.toggle('on',k===i));
+  st.forEach((s,k)=>{s.classList.toggle('on',k===i);s.classList.toggle('done',k<i)});
+}
+function sendForm(e){
+  e.preventDefault();
+  const f=e.target,svc=[...f.querySelectorAll('input[name=svc]:checked')].map(x=>x.value).join(', ');
+  const body=`Facility: ${f.facility.value}%0D%0AServices: ${svc}%0D%0AFrequency: ${f.freq.value}%0D%0AName: ${f.name.value}%0D%0APhone: ${f.phone.value}%0D%0AEmail: ${f.email.value}%0D%0A%0D%0A${encodeURIComponent(f.message.value)}`;
+  window.location.href=`mailto:kbmcalgary@hotmail.com?subject=Cleaning%20estimate%20request&body=${body}`;
+  panes.forEach(p=>p.classList.remove('on'));
+  document.getElementById('done').style.display='block';
+  st.forEach(s=>{s.classList.remove('on');s.classList.add('done')});
+  return false;
+}
+</script>
+</body>
+</html>
