@@ -192,8 +192,14 @@ nav a:hover::after,nav a.on::after{width:100%}
 .hours td{padding:3px 0}
 .hours td:last-child{text-align:right}
 .hours .off{color:var(--muted)}
-.map{margin-top:26px;aspect-ratio:4/3;border:1px solid var(--rule);filter:grayscale(1)}
-.map iframe{width:100%;height:100%;border:0}
+.map{margin-top:26px;aspect-ratio:4/3;position:relative;overflow:hidden;display:block;color:var(--paper)}
+.map img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.map::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,18,18,.1) 30%,rgba(18,18,18,.85))}
+.map .mi{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+.map .mi small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#d6d1c6;margin-bottom:6px}
+.map .mi b{font-family:var(--serif);font-weight:400;font-size:18px;line-height:1.2}
+.map .mi span{flex:none;background:var(--paper);color:var(--ink);font-weight:600;font-size:13.5px;padding:10px 14px;display:inline-flex;gap:8px;align-items:center}
+.map:hover img{transform:scale(1.04)}
 .visit{margin-top:18px;font-size:14.5px;color:var(--muted)}
 .visit em{font-family:var(--serif);color:var(--ink);font-size:17px}
 
@@ -520,7 +526,10 @@ footer{background:var(--ink);color:#d0cabe;padding:80px 0 0;font-size:15px}
           <tr class="off"><td>Sunday</td><td>Closed</td></tr>
         </table>
       </div>
-      <div class="map"><iframe title="KBM Janitorial location" loading="lazy" src="https://maps.google.com/maps?q=1108%20Falconridge%20Drive%20NE%2C%20Calgary%2C%20AB%20T3J%201A2&z=15&output=embed"></iframe></div>
+      <a class="map" href="https://www.google.com/maps/search/?api=1&query=1108+Falconridge+Drive+NE+Calgary+AB+T3J+1A2" target="_blank" rel="noopener">
+        <img src="images/lobby-wide.jpg" alt="Clean commercial lobby" loading="lazy">
+        <div class="mi"><div><small>Find our office</small><b>1108 Falconridge Drive NE<br>Calgary, AB T3J 1A2</b></div><span>Get directions →</span></div>
+      </a>
       <p class="visit"><em>Prefer to talk in person?</em> Stop by the office during business hours.</p>
     </aside>
   </div>
